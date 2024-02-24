@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="theme.css">
+    <title>Document</title>
+    <style>
+        .brand_list {
+    overflow: hidden;
+}
+
+.brand_list .wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 15rem;
+    justify-items: stretch;
+    animation: scroll 12s linear infinite alternate;
+}
+@keyframes scroll {
+to {
+    translate: calc(-4 * 15rem);
+}
+}
+
+    </style>
+</head>
+<body>
+    <div class="brand_list">
+        <div class="wrapper" id="imageWrapper">
+            <img src="img/cc_1.jpg" alt="banner image">
+            <img src="img/cc_2.jpg" alt="banner image">
+            <img src="img/cc_3.jpg" alt="banner image">
+            <img src="img/cc_4.jpg" alt="banner image">
+            <img src="img/cc_5.jpg" alt="banner image">
+            <img src="img/cc_6.jpg" alt="banner image">
+            <img src="img/cc_7.jpg" alt="banner image">
+            <img src="img/cc_8.jpg" alt="banner image">
+        </div>
+    </div>
+
+    <script>
+        // Duplicate images dynamically
+        const imageWrapper = document.getElementById('imageWrapper');
+        const originalImages = imageWrapper.innerHTML;
+        imageWrapper.innerHTML += originalImages;
+
+        // Adjust the animation duration based on the number of images
+        const imageCount = document.querySelectorAll('.wrapper img').length;
+        wrapper.style.animationDuration = `${imageCount * 8}s`; // Adjust the multiplier based on the number of images
+    </script>
+</body>
+</html>
